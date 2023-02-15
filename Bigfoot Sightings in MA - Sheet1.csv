@@ -1,30 +1,30 @@
 Index,Year of Sighting,Season,County,State,Class,Number of Witnesses,Environment
-1,2015,Fall,Berkshire,MA,B,1,"Woods, Rocks"
-2,2000,Fall,Hampden,MA,B,1,"Mountains, Woods"
-3,2000,Fall,Plymouth,MA,B,1,"Woods, Lake"
-4,1980,Fall,Barnstable,MA,C,2,Woods
-5,2014,Fall,Berkshire,MA,B,2,"Woods, Lake"
-6,2015,Fall,Berkshire,MA,B,3,Lake
-7,2009,Spring,Plymouth,MA,B,1,Woods
-8,2008,Spring,Worcester,MA,A,1,Woods
-9,2016,Spring,Berkshire,MA,B,2,Woods
-10,1978,Spring,Essex,MA,A,2,"Swamp, Woods"
-11,2016,Spring,Worcester,MA,B,2,Swamp
-12,2015,Spring,Plymouth,MA,B,3,"Woods, Lake"
-13,1998,Spring,Hampshire,MA,B,5,Woods
-14,2015,Summer,Berkshire,MA,A,1,Field
-15,1989,Summer,Berkshire,MA,A,1,Woods
-16,2013,Summer,Plymouth,MA,A,1,Woods
-17,2009,Summer,Bristol,MA,A,2,Woods
-18,1996,Summer,Essex,MA,B,2,Woods
-19,2006,Summer,Franklin,MA,B,2,Lake
-20,2020,Summer,Hampshire,MA,B,2,"Mountains, Woods"
-21,1979,Summer,Plymouth,MA,B,2,Woods
-22,2010,Summer,Worcester,MA,B,2,Woods
-23,1977,Winter,Barnstable,MA,B,1,Woods
-24,2016,Winter,Berkshire,MA,B,1,Snow
-25,2012,Winter,Berkshire,MA,B,2,Woods
-26,2010,Winter,Hampden,MA,B,2,Woods
-27,1977,Winter,Plymouth,MA,A,2,"Swamp, Woods"
-28,2016,Winter,Worcester,MA,A,2,Woods
-29,2009,Winter,Bristol,MA,B,3,Snow
+1,1977,Winter,Barnstable,MA,B,1,Woods
+2,2016,Winter,Berkshire,MA,B,1,Snow
+3,2012,Winter,Berkshire,MA,B,2,Woods
+4,2010,Winter,Hampden,MA,B,2,Woods
+5,1977,Winter,Plymouth,MA,A,2,"Swamp, Woods"
+6,2016,Winter,Worcester,MA,A,2,Woods
+7,2009,Winter,Bristol,MA,B,3,Snow
+8,2009,Spring,Plymouth,MA,B,1,Woods
+9,2008,Spring,Worcester,MA,A,1,Woods
+10,2016,Spring,Berkshire,MA,B,2,Woods
+11,1978,Spring,Essex,MA,A,2,"Swamp, Woods"
+12,2016,Spring,Worcester,MA,B,2,Swamp
+13,2015,Spring,Plymouth,MA,B,3,"Woods, Lake"
+14,1998,Spring,Hampshire,MA,B,5,Woods
+15,2015,Summer,Berkshire,MA,A,1,Field
+16,1989,Summer,Berkshire,MA,A,1,Woods
+17,2013,Summer,Plymouth,MA,A,1,Woods
+18,2009,Summer,Bristol,MA,A,2,Woods
+19,1996,Summer,Essex,MA,B,2,Woods
+20,2006,Summer,Franklin,MA,B,2,Lake
+21,2020,Summer,Hampshire,MA,B,2,"Mountains, Woods"
+22,1979,Summer,Plymouth,MA,B,2,Woods
+23,2010,Summer,Worcester,MA,B,2,Woods
+24,2015,Fall,Berkshire,MA,B,1,"Woods, Rocks"
+25,2000,Fall,Hampden,MA,B,1,"Mountains, Woods"
+26,2000,Fall,Plymouth,MA,B,1,"Woods, Lake"
+27,1980,Fall,Barnstable,MA,C,2,Woods
+28,2014,Fall,Berkshire,MA,B,2,"Woods, Lake"
+29,2015,Fall,Berkshire,MA,B,3,Lake
