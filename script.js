@@ -16,6 +16,7 @@ const svg = d3.select("#my_dataviz")
     d3.csv("Bigfoot Sightings in MA - Sheet1.csv").then(function (data) {
         data.forEach(function (d) {
             d["Number of Witnesses"] = +d["Number of Witnesses"];
+            d["Sightings per Season"] = +d["Sightings per Season"];
           });
 
   // X scale
@@ -28,17 +29,27 @@ const svg = d3.select("#my_dataviz")
   const y = d3.scaleRadial()
       .range([innerRadius, outerRadius])   // Domain will be define later.
       .domain([0, 5]); // Domain of Y is from 0 to the max seen in the data
-// color scale
-var myColor = d3.scaleOrdinal().domain(data)
-  .range(["blue", "pink", "yellow", "red"])
+
+// second Y scale
+ // Second barplot Scales
+ var ybis = d3.scaleRadial()
+ .range([innerRadius, 5])   // Domain will be defined later.
+ .domain([0, 10]);
+
+// Seasons color scale
+var seasonsScale = d3.scaleOrdinal().domain(data)
+  .range(["#2f52e0", "#bced09", "#f9cb40", "#ff715b"])
+// Environment color scale
+var enviroScale = d3.scaleOrdinal().domain(data)
+  .range(["#beb0a7", "#8b9d83", "#6a7b76", "#3a4e48", "#040303"])
 
   // Add bars
   svg.append("g")
     .selectAll("path")
     .data(data)
     .join("path")
-      .attr("fill", function (d) {
-        return myColor(d.Season);
+    .attr("fill", function (d) {
+        return enviroScale(d.Environment);
       })
       .attr("d", d3.arc()     // imagine your doing a part of a donut plot
           .innerRadius(innerRadius)
@@ -63,5 +74,21 @@ var myColor = d3.scaleOrdinal().domain(data)
     .style("font-size", "11px")
     .attr("alignment-baseline", "middle")
 
+// Add the second series
+svg.append("g")
+.selectAll("path")
+.data(data)
+.enter()
+.append("path")
+.attr("fill", function (d) {
+    return seasonsScale(d.Season);
+  })
+  .attr("d", d3.arc()     // imagine your doing a part of a donut plot
+      .innerRadius( function(d) { return ybis(0) })
+      .outerRadius( function(d) { return ybis(d['Sightings per Season']); })
+      .startAngle(function(d) { return x(d.Index); })
+      .endAngle(function(d) { return x(d.Index) + x.bandwidth(); })
+      .padAngle(0.01)
+      .padRadius(innerRadius))
 
 });
