@@ -2,7 +2,7 @@
 const margin = {top: 10, right: 10, bottom: 150, left: 10},
     width = 1000 - margin.left - margin.right,
     height = 1000 - margin.top - margin.bottom,
-    innerRadius = 200,
+    innerRadius = 60,
     outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
 
 // append the svg object to the body of the page
@@ -16,7 +16,6 @@ const svg = d3.select("#my_dataviz")
     d3.csv("bigfoot.csv").then(function (data) {
         data.forEach(function (d) {
             d["Number.of.Witnesses"] = +d["Number.of.Witnesses"];
-            d["Sightings_by_County_per_Season"] = +d["Sightings_by_County_per_Season"];
           });
 
   // X scale
@@ -33,10 +32,10 @@ const svg = d3.select("#my_dataviz")
 
 // Seasons color scale
 
-// do a diverging color scale??
-var seasonsScale = d3.scaleOrdinal().domain(data)
-  .range(["#2f52e0", "#bced09", "#f9cb40", "#ff715b"])
-// Environment color scale
+// // do a diverging color scale??
+// var seasonsScale = d3.scaleOrdinal().domain(data)
+//   .range(["#2f52e0", "#bced09", "#f9cb40", "#ff715b"])
+// // Environment color scale
 
 // do categorical discrete variables
 var enviroScale = d3.scaleOrdinal().domain(data)
@@ -74,6 +73,23 @@ var enviroScale = d3.scaleOrdinal().domain(data)
     .attr("transform", function(d) { return (x(d.County) + x.bandwidth() / 2 + Math.PI) % (2 * Math.PI) < Math.PI ? "rotate(180)" : "rotate(0)"; })
     .style("font-size", "11px")
     .attr("alignment-baseline", "middle")
+
+    // add season axes lines
+
+  svg.append("g")
+    .selectAll("path")
+    .data(data)
+    .join("path")
+    .attr("fill", "black")
+      .attr("stroke", "black")
+      .attr("stroke-width",3)
+      .attr("d", d3.arc()     // imagine your doing a part of a donut plot
+          .innerRadius(innerRadius)
+          .outerRadius(outerRadius)
+          .startAngle(d => x(d.season_start_index))
+          .endAngle(d => x(d.season_start_index))
+          .padAngle(0.03)
+          .padRadius(innerRadius))
 
 
 
